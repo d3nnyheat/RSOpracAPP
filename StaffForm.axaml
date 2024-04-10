@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RSOpracAPP.StaffForm"
+        Title="Сотрудники"
+        Width="600" Height="450"
+        Background="CornflowerBlue"
+        Icon="/Assets/rso.ico"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Content="Сотрудники" FontSize="20" FontFamily="Arial" HorizontalContentAlignment="Center"></Label>
+        <DataGrid Name="StaffGrid" Height="320" x:CompileBindings="False" Margin ="10 5 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Description}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по должности: </TextBlock>
+            <TextBox Name="SearchTextBox" Width="175" Margin ="10 10 0 0" TextChanged="SearchTextBox_OnTextChanged"></TextBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Margin="10 10 10 10">
+            <Button Name="BackButton" Content="Вернуться к меню" Click="BackToMenu"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

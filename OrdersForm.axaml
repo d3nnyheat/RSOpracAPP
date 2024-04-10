@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RSOpracAPP.OrdersForm"
+        Title="Заказы"
+        Width="570" Height="330"
+        Background="CornflowerBlue"
+        Icon="/Assets/rso.ico"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Content="Заказы" FontSize="20" FontFamily="Arial" HorizontalContentAlignment="Center"></Label>
+        <DataGrid Name="OrderGrid" Height="250" x:CompileBindings="False" Margin ="10 5 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID бойца студ.отряда" Binding="{Binding ID_Member}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID наименования в каталоге" Binding="{Binding ID_Catalog}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Margin="10 10 10 10">
+            <Button Name="BackButton" HorizontalAlignment="Center" Content="Вернуться к меню" Click="BackToMenu"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
